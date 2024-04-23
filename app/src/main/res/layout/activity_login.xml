@@ -78,15 +78,6 @@
             android:text="¿No tienes cuenta? Registrate aquí"
             android:textColor="#013158" />
 
-        <TextView
-            android:id="@+id/tvLoginInvestigador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvRegister"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:text="¿Eres investigador? Inicia sesión aquí"
-            android:textColor="#668C4D" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

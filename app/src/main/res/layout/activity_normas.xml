@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".normas">
     <TextView
-        android:id="@+id/marco"
+        android:id="@+id/marcoNormas"
         android:layout_width="435dp"
         android:layout_height="68dp"
         android:background="#1c5560"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/titulo1"
+        android:id="@+id/tituloNormas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/introd"
+        android:id="@+id/introdNormas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
@@ -53,7 +53,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Buscar"
+        android:id="@+id/BuscarNormas"
         android:layout_width="416dp"
         android:layout_height="45dp"
         android:layout_marginTop="68dp"

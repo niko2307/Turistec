@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="light_blue_600">#FF2196F3</color>
+    <color name="light_blue_A200">#FF03A9F4</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="light_blue_900">#FF0D47A1</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="azul_Oscuro">#001f36</color>
+    <color name="Azul_Verde">#1c5560</color>
+    <color name="Verde">#79ae92</color>
+    <color name= "Amarillo">#fbffcd</color>
+
+</resources>

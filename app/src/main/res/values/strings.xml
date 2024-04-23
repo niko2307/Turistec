@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Turistec</string>
+
+    <string-array name="opcionesEspecies">
+        <item>Mamífero</item>
+        <item>Insecto</item>
+        <item>Ave</item>
+        <item>Reptil</item>
+        <item>Anfibio</item>
+    </string-array>
+
+    <string name="snackbar_dismiss_label">Cerrar</string>
+
+    <string name="avistamientoDesc">Acá puedes reportar un avistamiento de fauna en la estación de Awaq.</string>
+    <string name="imagenesRealDesc">Acceder a imágenes en tiempo real de diferentes puntos de interés de la estación de Awaq.</string>
+</resources>

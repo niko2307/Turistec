@@ -23,7 +23,7 @@ class Home : AppCompatActivity() {
 
         val btnmapa = findViewById<Button>(R.id.btnRuta)
         btnmapa.setOnClickListener {
-            val intent2 = Intent(this, MapsActivity::class.java)
+            val intent2 = Intent(this, Rut_inter::class.java)
             startActivity(intent2)
         }
 

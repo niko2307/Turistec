@@ -81,7 +81,6 @@ class login : AppCompatActivity() {
         }
     }
 
-
     private fun validateCredentials(username: String, password: String): Boolean {
         for (i in 0 until usuarios.length()) {
             val usuario = usuarios.getJSONObject(i)

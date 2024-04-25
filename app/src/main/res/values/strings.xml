@@ -13,4 +13,5 @@
 
     <string name="avistamientoDesc">Acá puedes reportar un avistamiento de fauna en la estación de Awaq.</string>
     <string name="imagenesRealDesc">Acceder a imágenes en tiempo real de diferentes puntos de interés de la estación de Awaq.</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

@@ -21,6 +21,12 @@ class Home : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val btnmapa = findViewById<Button>(R.id.btnRuta)
+        btnmapa.setOnClickListener {
+            val intent2 = Intent(this, MapsActivity::class.java)
+            startActivity(intent2)
+        }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

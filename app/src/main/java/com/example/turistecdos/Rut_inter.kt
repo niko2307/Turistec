@@ -18,7 +18,7 @@ class Rut_inter : AppCompatActivity() {
         val btnActual = findViewById<ImageButton>(R.id.rut_actual)
         btnActual.setOnClickListener {
             // Iniciar la actividad de mapa
-            val intent = Intent(this, MapsActivity::class.java)
+           val intent = Intent(this, MapsActivity::class.java)
             startActivity(intent)
         }
 

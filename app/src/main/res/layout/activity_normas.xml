@@ -6,10 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".normas">
+
     <TextView
         android:id="@+id/marcoNormas"
-        android:layout_width="435dp"
-        android:layout_height="68dp"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
         android:background="#1c5560"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -20,10 +21,10 @@
         android:id="@+id/tituloNormas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="14dp"
         android:text="Normas de comportamiento"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="26sp"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -33,41 +34,44 @@
         android:id="@+id/introdNormas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="16dp"
         android:text="Para proteger el medio ambiente"
         android:textColor="#1c5560"
         android:textSize="18sp"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tituloNormas" />
 
     <ListView
         android:id="@+id/normas"
-        android:layout_width="406dp"
-        android:layout_height="824dp"
-        android:layout_marginTop="136dp"
+        android:layout_width="match_parent"
+        android:layout_height="537dp"
+        android:layout_marginTop="138dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_menu"/>
 
     <EditText
         android:id="@+id/BuscarNormas"
-        android:layout_width="416dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        android:padding="11dp"
         android:ems="10"
         android:inputType="text"
         android:hint="Buscar"
-        android:textColorHint="#79a8ff"
+        android:textColorHint="@color/azul_Oscuro"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/introdNormas"/>
+
     <include
         android:id="@+id/bottom_menu"
-        layout="@layout/bottom_navehgation_menu"
+        layout="@layout/bottom_navegation_menu"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_gravity="bottom"

@@ -49,6 +49,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
         } else {
             requestLocationPermission()
+            if (checkLocationPermission()) {
+                fusedLocationClient.lastLocation
+                    .addOnSuccessListener { location ->
+                        if (location != null) {
+                            currentLocation = LatLng(location.latitude, location.longitude)
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation!!, 15f))
+                            addMarker(currentLocation!!)
+                        }
+                    }
+            }
         }
 
         mMap.setOnMapClickListener { latLng ->
@@ -58,8 +68,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
+
     private fun addMarker(latLng: LatLng) {
-        currentMarker = mMap.addMarker(MarkerOptions().position(latLng).title("Nuevo Marcador"))
+        currentMarker = mMap.addMarker(MarkerOptions().position(latLng).title("Nueva Ubicación"))
     }
 
     private fun calculateDistance(destination: LatLng) {

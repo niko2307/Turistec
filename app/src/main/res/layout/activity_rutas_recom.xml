@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/color"
-        android:layout_width="435dp"
-        android:layout_height="68dp"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
         android:background="#1c5560"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/Encabezado_recom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="14dp"
         android:text="Rutas Recomendadas"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -32,7 +32,7 @@
 
     <ListView
         android:id="@+id/listViewRutas"
-        android:layout_width="406dp"
+        android:layout_width="match_parent"
         android:layout_height="824dp"
         android:layout_marginTop="112dp"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,15 +42,27 @@
 
     <EditText
         android:id="@+id/BuscarR"
-        android:layout_width="416dp"
-        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_marginTop="68dp"
         android:ems="10"
         android:inputType="text"
         android:hint="Buscar"
-        android:textColorHint="#79a8ff"
+        android:textColorHint="@color/azul_Oscuro"
+        android:padding="11dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Inclusión del menú de navegación inferior -->
+    <include
+        android:id="@+id/bottom_menu"
+        layout="@layout/bottom_navegation_menu"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

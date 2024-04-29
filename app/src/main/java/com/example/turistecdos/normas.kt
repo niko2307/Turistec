@@ -20,13 +20,8 @@ class normas : AppCompatActivity() {
     private lateinit var menuRules: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_normas)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
         val listaNormas = listOf(
             Norma("Respetar la flora y fauna", "Evitar dañar plantas, animales y ecosistemas naturales. No recolectar especies ni interferir con su hábitat."),
             Norma("No dejar basura", "Mantener limpio el entorno y utilizar los contenedores de basura adecuados. Reciclar cuando sea posible."),
@@ -70,7 +65,7 @@ class normas : AppCompatActivity() {
             startActivity(intent)
         }
         menuSearch.setOnClickListener {
-            val intent = Intent(this, Avistamiento::class.java)
+            val intent = Intent(this, Rutas_Recom::class.java)
             startActivity(intent)
         }
         menuRules.setOnClickListener {

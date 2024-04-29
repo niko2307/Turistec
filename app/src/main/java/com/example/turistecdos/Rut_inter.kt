@@ -10,9 +10,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class Rut_inter : AppCompatActivity() {
+    private lateinit var menuHome: ImageButton
+    private lateinit var menuSearch: ImageButton
+    private lateinit var menuRules: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_rut_inter)
 
         val btnActual = findViewById<ImageButton>(R.id.rut_actual)
@@ -28,6 +30,31 @@ class Rut_inter : AppCompatActivity() {
             val intent2 = Intent(this, Rutas_Recom::class.java)
             startActivity(intent2)
         }
+
+        setupButtonClickListeners()
     }
 
+    private fun setupButtonClickListeners() {
+        menuHome = findViewById(R.id.menu_home)
+        menuSearch = findViewById(R.id.menu_search)
+        menuRules = findViewById(R.id.menu_rules)
+
+        // Escuchador de clics para el botón de inicio
+        menuHome.setOnClickListener {
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
+        }
+
+        // Escuchador de clics para el botón de búsqueda
+        menuSearch.setOnClickListener {
+            val intent = Intent(this, Rutas_Recom::class.java)
+            startActivity(intent)
+        }
+
+        // Escuchador de clics para el botón de normas
+        menuRules.setOnClickListener {
+            val intent = Intent(this, normas::class.java)
+            startActivity(intent)
+        }
+    }
 }

@@ -21,8 +21,15 @@ import androidx.core.view.WindowInsetsCompat
 import android.Manifest
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.res.Resources
+import android.location.LocationManager
+import android.net.Uri
+import android.util.Log
+import android.util.TypedValue
 import android.view.View
+import android.widget.GridLayout
 import android.widget.ImageView
+import com.google.android.material.snackbar.Snackbar
 import java.util.Calendar
 
 
@@ -37,10 +44,17 @@ class Avistamiento : AppCompatActivity() {
     private lateinit var editTextTime: EditText
     private lateinit var btnReportar: Button
     private lateinit var btnTomarFoto:ImageButton
+    private lateinit var btnimagenes_real: Button
+
+    private lateinit var locationManager: LocationManager
+
+    private lateinit var menuHome: ImageButton
+    private lateinit var menuSearch: ImageButton
+    private lateinit var menuRules: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContentView(R.layout.activity_avistamiento)
         spinnerEspecie = findViewById(R.id.spinnerEspecie)
         etPlaceDescription = findViewById(R.id.etPlaceDescription)
@@ -51,13 +65,8 @@ class Avistamiento : AppCompatActivity() {
         editTextTime = findViewById(R.id.editTextTime)
         btnReportar = findViewById(R.id.btnReportar)
         btnTomarFoto = findViewById(R.id.addImages)
+        btnimagenes_real = findViewById(R.id.btnImagenes)
 
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
         btnTomarFoto.setOnClickListener {
             if (checkPermissions()) {
                 dispatchTakePictureIntent()
@@ -78,6 +87,10 @@ class Avistamiento : AppCompatActivity() {
                 Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show()
             }
         }
+        btnimagenes_real.setOnClickListener {
+            val intent = Intent(this, imagenes_real::class.java)
+            startActivity(intent)
+        }
 
         editTextDate.setOnClickListener {
             showDatePickerDialog()
@@ -87,6 +100,8 @@ class Avistamiento : AppCompatActivity() {
             showTimePickerDialog()
         }
 
+        // Configurar botones menu inferior
+        setupButtonClickListeners()
 
     }
 
@@ -108,13 +123,46 @@ class Avistamiento : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            val imageBitmap = data?.extras?.get("data") as Bitmap
-            val imageViewCaptured: ImageView = findViewById(R.id.imageViewCaptured)
-            imageViewCaptured.setImageBitmap(imageBitmap)
-            imageViewCaptured.visibility = View.VISIBLE
-
-
+            val imageBitmap = data?.extras?.get("data") as Bitmap? // Obtener la imagen capturada
+            if (imageBitmap != null) {
+                val imageView = createImageView()
+                imageView.setImageBitmap(imageBitmap) // Configurar la imagen capturada en la ImageView
+                addImageViewToGridLayout(imageView)
+            } else {
+                Toast.makeText(this, "¡No se pudo tomar la foto!", Toast.LENGTH_SHORT).show()
+            }
         }
+    }
+
+
+    // Funciones para crear un grid dinamico
+    private fun createImageView(): ImageView {
+        val imageView = ImageView(this)
+        imageView.layoutParams = GridLayout.LayoutParams().apply {
+            width = 0
+            height = 120.dpToPx() // altura deseada
+            columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f) // distribuir uniformemente en columnas
+            rowSpec = GridLayout.spec(GridLayout.UNDEFINED, 1) // insertar en la siguiente fila si es necesario
+            setMargins(8.dpToPx(), 0, 8.dpToPx(), 0) // márgenes
+        }
+        imageView.scaleType = ImageView.ScaleType.FIT_CENTER
+        imageView.adjustViewBounds = true
+        return imageView
+    }
+
+    private fun addImageViewToGridLayout(imageView: ImageView) {
+        val preview = findViewById<GridLayout>(R.id.imagesGrid)
+
+        // Agregar la nueva ImageView al GridLayout
+        preview.addView(imageView)
+    }
+
+    fun Int.dpToPx(): Int {
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            this.toFloat(),
+            Resources.getSystem().displayMetrics
+        ).toInt()
     }
 
     // Método para validar que todos los campos estén llenos
@@ -165,6 +213,29 @@ class Avistamiento : AppCompatActivity() {
         timePicker.show()
     }
 
+    private fun setupButtonClickListeners() {
+        menuHome = findViewById(R.id.menu_home)
+        menuSearch = findViewById(R.id.menu_search)
+        menuRules = findViewById(R.id.menu_rules)
+
+        // Escuchador de clics para el botón de inicio
+        menuHome.setOnClickListener {
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
+        }
+
+        // Escuchador de clics para el botón de búsqueda
+        menuSearch.setOnClickListener {
+            val intent = Intent(this, Rutas_Recom::class.java)
+            startActivity(intent)
+        }
+
+        // Escuchador de clics para el botón de normas
+        menuRules.setOnClickListener {
+            val intent = Intent(this, normas::class.java)
+            startActivity(intent)
+        }
+    }
 
 }
 

@@ -6,22 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".login">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
+        android:layout_height="wrap_content"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:context=".LoginActivity">
 
         <TextView
             android:id="@+id/tvLoginTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp"
             android:text="Inicio sesión"
-            android:textColor="#013158"
+            android:textColor="@color/azul_Oscuro"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -33,7 +34,7 @@
             android:layout_marginTop="32dp"
             android:hint="Usuario"
             android:textColor="#1c5560"
-            android:textColorHint="#79a8ff" />
+            android:textColorHint="@color/Azul_Verde" />
 
         <EditText
             android:id="@+id/etPassword"
@@ -44,7 +45,7 @@
             android:hint="Contraseña"
             android:inputType="textPassword"
             android:textColor="#1c5560"
-            android:textColorHint="#79a8ff" />
+            android:textColorHint="@color/Azul_Verde" />
 
 
         <TextView
@@ -52,8 +53,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/etPassword"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
             android:backgroundTint="#009688"
             android:text="¿Olvidaste la contraseña?"
             android:textColor="#013158" />
@@ -64,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvForgotPassword"
             android:layout_marginTop="16dp"
-            android:backgroundTint="#5d8fff"
+            android:backgroundTint="@color/Azul_Verde"
             android:text="Iniciar"
             android:textColor="@color/white" />
 

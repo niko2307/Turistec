@@ -9,88 +9,99 @@
     tools:context=".Home">
     <!-- activity_home.xml -->
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Logout"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/exit_to_app"
+        app:backgroundTint="@color/azul_Oscuro"
+        app:tint="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-56dp">
+        android:padding="16dp">
 
         <!-- Saludo al usuario -->
-
-
         <TextView
             android:id="@+id/textViewGreeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="¡Bienvenido, Usuario!"
-            android:textColor="#065A9E"
-            android:textSize="28sp" />
+            android:text="¡Bienvenido!"
+            android:textColor="@color/Azul_Verde"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_centerHorizontal="true"/>
 
         <TextView
             android:id="@+id/textBienvenida"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
             android:layout_marginTop="95dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:layout_centerHorizontal="true"
             android:text="Selecciona la opción que desees"
-            android:textColor="#065A9E"
-            android:textSize="20sp" />
+            android:textColor="@color/Azul_Verde"
+            android:textSize="20sp"/>
 
         <ImageView
             android:id="@+id/imageViewButton1"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_above="@+id/btnrepo"
-            android:layout_marginLeft="100dp"
             android:layout_marginTop="700dp"
             android:layout_marginBottom="-240dp"
-            android:src="@drawable/cas3" />
+            android:src="@drawable/cas3"
+            android:layout_centerHorizontal="true"/>
 
         <ImageView
             android:id="@+id/imageViewButton2"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_above="@+id/btnRuta"
-            android:layout_marginLeft="100dp"
             android:layout_marginTop="700dp"
             android:layout_marginBottom="-500dp"
-            android:src="@drawable/cas1" />
+            android:src="@drawable/cas1"
+            android:layout_centerHorizontal="true"/>
 
         <Button
             android:id="@+id/btnrepo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewGreeting"
-            android:layout_marginLeft="145dp"
             android:layout_marginTop="210dp"
-            android:backgroundTint="#5d8fff"
+            android:backgroundTint="@color/azul_Oscuro"
             android:text="Reportar!"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"/>
 
         <Button
             android:id="@+id/btnRuta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textViewGreeting"
-            android:layout_marginLeft="160dp"
             android:layout_marginTop="480dp"
-            android:backgroundTint="#5d8fff"
+            android:backgroundTint="@color/azul_Oscuro"
             android:text="Ruta! "
-            android:textColor="@color/white" />
-
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
 
     <include
         android:id="@+id/bottom_menu"
-        layout="@layout/bottom_navehgation_menu"
+        layout="@layout/bottom_navegation_menu"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_gravity="bottom"

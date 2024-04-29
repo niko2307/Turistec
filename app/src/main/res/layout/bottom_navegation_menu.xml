@@ -8,6 +8,7 @@
     android:background="@color/azul_Oscuro"
     android:padding="13dp"
     android:layout_gravity="bottom">
+
     <ImageButton
         android:id="@+id/menu_home"
         android:layout_width="0dp"

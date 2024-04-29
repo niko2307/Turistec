@@ -1,11 +1,16 @@
 <resources>
 
-    <style name="Widget.Theme.Turistecdos.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
-        <item name="android:background">@color/black_overlay</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
     </style>
 
-    <style name="Widget.Theme.Turistecdos.ButtonBar.Fullscreen" parent="">
-        <item name="android:background">@color/black_overlay</item>
-        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    <style name="FabIconLarge" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="maxImageSize">45dp</item>
+        <item name="contentPadding">40dp</item>
+    </style>
+
+    <style name="FabReducedPadding" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="contentPadding">0dp</item>
+        <item name="maxImageSize">20dp</item>
     </style>
 </resources>
